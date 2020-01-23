@@ -1,0 +1,17 @@
+{
+  "lastCodepoint": 108,
+  "icons": {
+    "board-with-stats": 97,
+    "cogs": 98,
+    "datetime": 99,
+    "family": 100,
+    "handshake": 101,
+    "info": 102,
+    "pound": 103,
+    "puzzle": 104,
+    "range": 105,
+    "stats-increase": 106,
+    "sustain": 107,
+    "zoom-people": 108
+  }
+}

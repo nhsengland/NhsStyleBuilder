@@ -1,0 +1,39 @@
+@font-face {
+   font-family: icon-delivery-unit;
+   src: url('../delivery_unit_icons/icon.eot');
+   src: url('../delivery_unit_icons/icon.eot?#iefix') format('embedded-opentype'),
+         url('../delivery_unit_icons/icon.woff2') format('woff2'),
+         url('../delivery_unit_icons/icon.woff') format('woff'),
+         url('../delivery_unit_icons/icon.ttf') format('truetype'),
+         url('../delivery_unit_icons/icon.svg') format('svg');}
+._icon-board-with-stats:before,
+._icon-cogs:before,
+._icon-datetime:before,
+._icon-family:before,
+._icon-handshake:before,
+._icon-info:before,
+._icon-pound:before,
+._icon-puzzle:before,
+._icon-range:before,
+._icon-stats-increase:before,
+._icon-sustain:before,
+._icon-zoom-people:before {
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-family: "icon-delivery-unit"
+}
+._icon-board-with-stats:before { content: "\EA01" }
+._icon-cogs:before { content: "\EA02" }
+._icon-datetime:before { content: "\EA03" }
+._icon-family:before { content: "\EA04" }
+._icon-handshake:before { content: "\EA05" }
+._icon-info:before { content: "\EA06" }
+._icon-pound:before { content: "\EA07" }
+._icon-puzzle:before { content: "\EA08" }
+._icon-range:before { content: "\EA09" }
+._icon-stats-increase:before { content: "\EA0A" }
+._icon-sustain:before { content: "\EA0B" }
+._icon-zoom-people:before { content: "\EA0C" }

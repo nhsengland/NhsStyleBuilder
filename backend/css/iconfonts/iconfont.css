@@ -1,0 +1,83 @@
+/*
+Replace:
+"../iconfonts/iconfont.
+With:
+"../iconfonts/iconfont.
+*/
+@font-face {
+	font-family: "iconfont";
+	src: url("../iconfonts/iconfont.eot?b3f37a926f6c893955804fcb86ad0858?#iefix") format("embedded-opentype"),
+url("../iconfonts/iconfont.woff?b3f37a926f6c893955804fcb86ad0858") format("woff"),
+url("../iconfonts/iconfont.ttf?b3f37a926f6c893955804fcb86ad0858") format("truetype");
+}
+
+._icon {
+	line-height: 1;
+  &:before{
+    font-family: iconfont !important;
+    font-style: normal;
+    font-weight: normal !important;
+    vertical-align: top;
+  }
+}
+
+._icon-board-with-stats {
+  &:before{
+	  content: "\61";
+  }
+}
+._icon-cogs {
+  &:before{
+	  content: "\62";
+  }
+}
+._icon-datetime {
+  &:before{
+	  content: "\63";
+  }
+}
+._icon-family {
+  &:before{
+	  content: "\64";
+  }
+}
+._icon-handshake {
+  &:before{
+	  content: "\65";
+  }
+}
+._icon-info {
+  &:before{
+	  content: "\66";
+  }
+}
+._icon-pound {
+  &:before{
+	  content: "\67";
+  }
+}
+._icon-puzzle {
+  &:before{
+	  content: "\68";
+  }
+}
+._icon-range {
+  &:before{
+	  content: "\69";
+  }
+}
+._icon-stats-increase {
+  &:before{
+	  content: "\6a";
+  }
+}
+._icon-sustain {
+  &:before{
+	  content: "\6b";
+  }
+}
+._icon-zoom-people {
+  &:before{
+	  content: "\6c";
+  }
+}

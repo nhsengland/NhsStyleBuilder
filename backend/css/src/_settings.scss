@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import '../fonts/style';
+@import '../delivery_unit_icons/style';
+// @import '../iconfonts/iconfont'; // Enable this line must also enable @extend ._icon; in layoutbock_style.css
+// @import 'node_modules/nhsuk-frontend/dist/nhsuk';
+@import 'node_modules/nhsuk-frontend/packages/core/all';
+
+
+$_dir_root: '../..';
+
+$breakpoint_xsmall: 359px;
+$breakpoint_small: 540px;
+$breakpoint_medium: 768px;
+$breakpoint_large: 940px;
+$breakpoint_xlarge: 1280px;
+
+$breakpoint_kahootz_hidesidemenu: 800px; /* 800 - 1200, the actual viewport is 220 smaller*/
+$breakpoint_kahootz_medium_viewport: 988px; /*768 + 220*/
+$kahootz_sidemenu_width: 220px;
+
+// $nhsuk-text-color:	#212b32;
+// $nhsuk-secondary-text-color:	#4c6272;
+// $nhsuk-link-color:	#005eb8;
+// $nhsuk-link-hover-color:	#7C2855;
+// $nhsuk-link-visited-color:	#330072;
+// $nhsuk-link-active-color:	#002f5c;
+// $nhsuk-focus-color:	#ffeb3b;
+// $nhsuk-focus-text-color:	#212b32;
+// $nhsuk-border-color:	#d8dde0;
+// $nhsuk-form-border-color:	#4c6272;
+// $nhsuk-error-color:	#d5281b;
+// $nhsuk-button-color:	#007f3b;
+// $nhsuk-secondary-button-color:	#4c6272;
+// $color_nhsuk-blue: #005eb8;
+// $color_nhsuk-green: #007f3b;
+// $color_nhsuk-yellow: #ffeb3b;
+// $color_nhsuk-warm-yellow: #ffb81C;
+// $color_nhsuk-red: #d5281b;
+// $color_nhsuk-dark-pink: #7C2855;
+// $color_nhsuk-purple: #330072;
+// $color_nhsuk-grey-1: #4c6272;
+// $color_nhsuk-grey-2: #768692;
+// $color_nhsuk-grey-3: #aeb7bd;
+// $color_nhsuk-grey-4: #d8dde0;
+// $color_nhsuk-grey-5: #f0f4f5;
+// $color_nhsuk-white: #ffffff;
+// $color_nhsuk-pale-yellow: #fff9c4;
+
+$nhs_font_family: "Frutiger W01", Arial, sans-serif;
+$nhs_font_family_light: $nhs_font_family;
+$nhs_text_color: $nhsuk-text-color;
+
+$_color_nhs_blue: $color_nhsuk-blue;
+$_color_dark_blue: $color_nhsuk-blue;
+$_color_gray: $color_nhsuk-grey-2;
+$_color_blue: #1a7b91;
+$_color_dark-gray: $color_nhsuk-grey-1;
+$_color_light-blue: #4ca6b9;
+$_color_default: $_color_nhs_blue;
+
+%clear-after{
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+%headingTypography{
+  font-family: $nhs_font_family;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1em;
+  color: $nhs_text_color;
+  margin: 0;
+  @include nhsuk-responsive-margin(4, "bottom");
+}
+
+%textTypography{
+  font-family: $nhs_font_family_light;
+  font-size: 16px;
+  line-height: 1.375em;
+  font-weight: 300;
+  color: #050505;
+  margin: 0;
+  @include nhsuk-responsive-margin(4, "bottom");
+}
+
+%achorTypography{
+  color: $_color_default;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+%buttonTypography{
+  @extend %headingTypography;
+  font-size: 20px;
+  line-height: 1.3315em;
+  color: #fff;
+  margin: 0;
+}
+
+$expoEase: cubic-bezier(0.19, 1, 0.22, 1);
+
+%float_columns_2__even{
+  &:after{
+    @extend %clear-after;
+  }
+}
+%float_columns_2__even__col{
+  width: calc(49.999% - 10px);
+  display: block;
+  float: left;
+  margin-right: 20px;
+
+  @media only screen and (max-width: $breakpoint_small) {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+%float_columns_2__4_1{
+  &:after{
+    @extend %clear-after;
+  }
+}
+
+%float_columns_2__3_1{
+  &:after{
+    @extend %clear-after;
+  }
+}
+
+%float_columns_2__3_1__col_1{
+  width: 37.5%;
+  &:after{
+    @extend %clear-after;
+  }
+  @media only screen and (max-width: $breakpoint_small) {
+    float: none!important;
+    width: 100%!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
+}
+%float_columns_2__3_1__col_3{
+  width: 62.4999%;
+  &:after{
+    @extend %clear-after;
+  }
+  @media only screen and (max-width: $breakpoint_small) {
+    float: none!important;
+    width: 100%!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
+}
+
+%float_columns_2__4_1__col_1{
+  width: 24.67%;
+  &:after{
+    @extend %clear-after;
+  }
+  @media only screen and (max-width: $breakpoint_kahootz_medium_viewport) {
+    float: none!important;
+    width: 100%!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
+}
+%float_columns_2__4_1__col_4{
+  width: 75.3299%;
+  &:after{
+    @extend %clear-after;
+  }
+  @media only screen and (max-width: $breakpoint_kahootz_medium_viewport) {
+    float: none!important;
+    width: 100%!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+  }
+}
+
+%contrast-color-against-light{
+  color: $nhs_text_color!important;
+}
+%contrast-color-against-dark{
+  color: #fff!important;
+  *, &:before{
+    color: #fff!important;
+  }
+  span.like-a{
+    // color: color(#fff shade(20%)) !important;
+    color: shade(#fff, 20%) !important;
+  }
+}

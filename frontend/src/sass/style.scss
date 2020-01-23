@@ -1,0 +1,578 @@
+@import './_vars';
+:focus{
+  outline: none;
+}
+/* #region */
+#kdcontainer{
+  max-width: 1420px;
+  margin: auto;
+}
+#kdcontainer:after{
+  @extend %clear-after;
+}
+.menu-column {
+  position: fixed;
+  width: 30%;
+  min-height: 80%;
+  z-index: 999;
+  left: -800px;
+  opacity: 0;
+  top: 20px;
+  display: block;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: -10px 10px 30px #ccc;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.main-column {
+    background-color: #fff;
+    padding: 0;
+    margin: 0 420px 0 0px;
+}
+.maincontent {
+    width: 100%;
+    float: left;
+    padding: 20px 20px 20px 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 800px) {
+  .menu-column, .menubar-container{
+    overflow: visible !important;
+  }
+  .menu-column{
+    margin-left: 0 !important;
+    width: 100% !important;
+    min-height: 50px;
+  }
+  .main-column {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+/* #endregion */
+
+/* #region */
+.kd_columns{
+  margin-bottom: 10px;
+}
+/* #endregion */
+
+.builder-helper-container {
+  border: 1px solid $primary_gray;
+  color: #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  &:hover,
+  &.builder-helper-container-active {
+    color: $primary_gray_contrast !important;
+    border-color: $primary_gray !important;
+    &.kd_columns {
+      position: relative;
+      width: $helperContainerWidth;
+      @extend %_rowHelperContainerPosition;
+    }
+  }
+}
+
+.inline-element-control {
+  .icon_only {
+    &:before {
+      font-size: 25px;
+      color: lightpink;
+    }
+    &:hover {
+      &:before {
+        color: orange;
+      }
+    }
+  }
+}
+
+.row-block {
+  position: relative;
+  >.inline-element-control {
+    position: absolute;
+    display: none;
+    background-color: #d8dde0;
+    width: calc(100% + 12px + 2px);
+    @extend %_helperContainerPosition;
+    z-index: 9;
+    height: $helperContainerHeight;
+    padding-top: 0;
+    text-align: right;
+    line-height: $helperContainerHeight;
+    .icon {
+      color: #6a6868 !important;
+      line-height: 30px;
+    }
+    .v-select {
+      .dropdown-toggle {
+        border: none;
+      }
+      .col-indicator {
+        display: inline-block;
+        width: 100%;
+        margin-right: 10px;
+        margin-bottom: 0;
+        &.kd_columns {
+          .kd_col:nth-child(-n+1) {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+        &.kd_columns-2 {
+          .kd_col:nth-child(-n+2) {
+            display: inline-block;
+          }
+        }
+        &.kd_columns-3 {
+          .kd_col:nth-child(-n+3) {
+            display: inline-block;
+          }
+        }
+        &.kd_columns-4 {
+          .kd_col:nth-child(-n+4) {
+            display: inline-block;
+          }
+        }
+        &.kd_columns-5 {
+          .kd_col:nth-child(-n+5) {
+            display: inline-block;
+          }
+        }
+        .kd_col {
+          display: none;
+          height: 8px;
+          border-radius: 15px;
+          background-color: #ccc;
+          margin-bottom: 10px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  &.state--row-on-hover {
+    >.inline-element-control {
+      display: block;
+    }
+  }
+}
+
+.v-select {
+  .dropdown-menu {
+    li {
+      a {
+        color: black;
+        font-size: 16px;
+        font-weight: normal;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .dropdown-toggle {
+    background-color: #fff;
+    width: 100%;
+    text-transform: capitalize;
+    input[type=search],
+    input[type=search]:focus {
+      height: $helperContainerHeight;
+    }
+    .open-indicator,
+    button.clear {
+      bottom: 2px;
+    }
+  }
+  .selected-tag {
+    overflow: hidden;
+    max-width: 79%;
+    position: absolute;
+    opacity: .5;
+  }
+  &.open {
+    .dropdown-toggle {
+      .open-indicator {
+        bottom: -4px;
+      }
+    }
+  }
+}
+
+.options, .console {
+  .icon {
+    &:before {
+      color: $dark_gray !important;
+    }
+    &.console-configbody-toggle:before{
+      font-weight: 700;
+    }
+  }
+  hr {
+    border-color: #e8edee !important;
+  }
+  label {
+    color: black;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  select{
+    padding: 0px;
+    background: none;
+    border: 1px solid rgba(60,60,60,.26);
+    border-radius: 4px;
+    white-space: normal;
+    height: 30px;
+    box-sizing: border-box;
+  }
+  textarea{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    min-height: 180px;
+  }
+  .option-console-container{
+    .console-btn{
+      background-color: $secondary_gray;
+      color: #032f37;
+      display: block;
+      padding: 10px 20px;
+      float: right;
+    }
+  }
+}
+
+.z-element {
+  position: relative;
+  .preview{
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    > *{
+      margin: 0;
+    }
+    > a{
+      > img{
+        margin-bottom: 0!important;
+      }
+    }
+  }
+  .inline-element-control {
+    display: none;
+  }
+  &:hover {
+    .inline-element-control {
+      display: block;
+    }
+  }
+  &.state--mode-configuring {
+    .selection-overlay{
+      content: " ";
+      outline: red dashed 2px;
+      position: absolute;
+      padding: 0px;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      animation-name: blinker;
+      animation-duration: 0.5s;
+      animation-iteration-count: 2;
+      animation-timing-function: ease-in-out;
+    }
+    .options {
+      right: 0px;
+      display: block;
+      z-index: 999;
+      opacity: 1;
+      animation: fade-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+    .inline-element-control {
+      .icon {
+        &.element-draggle--btn{
+          display: none;
+        }
+      }
+    }
+  }
+  .element-remove--clickable-text {
+    color: red;
+    &:before {
+      color: red;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .preview {
+    display: block;
+  }
+  .inline-element-control {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .options {
+    @extend %_sideConsole;
+    z-index: -999;
+    /* To make draggable working, otherwise dragging image shows full options panel.*/
+    opacity: 0;
+    display: none;
+    top: 50px;
+    overflow: auto;
+    padding-top: 20px;
+    .element-control {
+      text-align: right;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 20;
+    }
+    .element-configs {
+      z-index: 9;
+      position: relative;
+      label{
+        margin-bottom: 5px;
+        display: block;
+      }
+    }
+    .console-container{
+      padding-top: 22px;
+    }
+  }
+  .dropdown-toggle {
+    height: $helperContainerHeight;
+    .form-control {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  .element-configs {
+    .dropdown-toggle {
+      .clear {
+      }
+    }
+  }
+}
+
+.z-field-collection{
+  padding-bottom: 10px;
+  border-bottom: 1px solid $secondary_gray;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  &:first-child, &.ghost:nth-child(2){
+    padding-top: 0;
+  }
+  &:after{
+    @extend %clear-after;
+  }
+  .icon_block.icon_only{
+    margin-bottom: 0;
+  }
+  .kd_columns{
+    margin-bottom: 0;
+    .kd_col{
+      margin-bottom: 0;
+    }
+  }
+}
+
+.col-block {
+  .element-selector {
+    display: none;
+  }
+  .col-remove{
+    display: none;
+  }
+  &.state--col-on-hover.empty-col {
+    .col-remove {
+      display: block;
+    }
+  }
+  &.kd_col {
+    margin-bottom: 0;
+  }
+}
+
+.state--row-on-element-adding {
+  &.row-block {
+    .col-block {
+      .element-selector {
+        display: block;
+      }
+    }
+  }
+}
+
+.row-drag-handle, .dragme {
+  cursor: move;
+}
+
+/* #region */
+.fieldCollectionControlBtns{
+  &:after{
+    @extend %clear-after;
+  }
+  > *{
+    display: block;
+    float: left;
+    margin-left: 10px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+.inline-input {
+  @extend %transparent-text-input;
+}
+.title-style{
+  font-size: 20px;
+  line-height: 1em;
+}
+.title-input {
+  @extend .inline-input;
+  @extend .title-style;
+  color: $primary_blue;
+}
+.color-input {
+  @extend %transparent-text-input;
+  font-size: 12px;
+  text-transform: lowercase;
+}
+.color-palette-indicator{
+  .color-input{
+    border: none;
+    height: 22px;
+    box-sizing: border-box;
+  }
+  select.color-input{
+    width: 100%;
+  }
+}
+.color-indicator{
+  &:after{
+    @extend %clear-after;
+  }
+  .color-indicator-color{
+    margin: 0;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    float: left;
+    border: 1px solid $secondary_gray;
+  }
+  .color-indicator-text{
+    float: left;
+  }
+}
+.txtAlign-indicator{
+  &:after{
+    @extend %clear-after;
+  }
+  .txtAlign-indicator-icon{
+    display: block;
+    margin-right: 10px;
+    float: left;
+  }
+  .txtAlign-indicator-text{
+    float: left;
+  }
+}
+.icon-indicator{
+  &:after{
+    @extend %clear-after;
+  }
+  .icon-indicator-icon{
+    &.icon:before{
+      font-size: 20px;
+    }
+    &.icon.icon-right-arrow-on-circle:before{
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-indent: 0px;
+      font-size: 20px;
+    }
+    display: block;
+    margin-right: 10px;
+    float: left;
+  }
+  .icon-indicator-text{
+    float: left;
+  }
+}
+.float-left{
+  float: left;
+  display: block;
+}
+.float-right{
+  float: right;
+  display: block;
+}
+/* #endregion */
+
+.placeholder-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Override layoutblock_style */
+/* #region */
+.icon.icon_block.icon_block--icon-position-right:before,
+.icon.icon_block.icon_block--icon-position-center:before,
+.icon.icon_block.icon_block--icon-position-left:before{
+  font-size: inherit;
+}
+/* #endregion */
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.dragImageFakeElement{
+  position: absolute;
+  transform: translateX(-500000px)!important;
+  width: 100%;
+  background: #C8EBFB;
+}
+
+.vue-tooltip.h-tooltip{
+  z-index: 1000;
+  font-family: "Frutiger W01", Arial, sans-serif;
+  font-size: inherit;
+  background-color: $primary_blue;
+  color: $primary_blue_contrast;
+}
+.help-btn{
+  font-size: inherit!important;
+  color: $primary_blue;
+}

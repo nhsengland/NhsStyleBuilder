@@ -1,0 +1,137 @@
+/* #region */
+
+$primary_gray: #f5f5f5;
+$primary_gray_contrast: #686666;
+$secondary_gray: #e8e8e8;
+$secondary_gray_contrast: #032f37;
+$primary_blue: #0f62af;
+$primary_blue_contrast: #fff;
+
+$dark_gray: #2c3e50;
+/* #endregion */
+
+/* #region */
+
+$console_padding: 38px;
+%_sideConsole {
+  width: 402px;
+  height: calc(100% - 63px);
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+  float: right;
+  background-color: #fff;
+  position: fixed;
+  right: 0;
+  top: 0;
+  border-left: 1px solid $secondary_gray;
+  .console-container {
+    &:after{
+      @extend %clear-after;
+    }
+    padding: 12px $console_padding;
+    border-bottom: 1px solid $secondary_gray;
+    .title-input{
+      border-bottom: none;
+    }
+  }
+  .console-configbody-toggle{
+    padding: 0!important;
+    margin: 0!important;
+  }
+  .console-configbody{
+    padding: 12px $console_padding;
+  }
+  label{
+    margin-bottom: 10px;
+    display: block;
+  }
+  .v-select{
+    .clear{
+      display: none;
+    }
+  }
+}
+
+/* #endregion */
+
+/* #region */
+
+$helperContainerWidth: calc(100% + 22px);
+$helperContainerHeight: 30px;
+%_helperContainerPosition {
+  top: -32px;
+  left: -12px;
+  padding-bottom: 0;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-bottom: -24px;
+  padding-top: $helperContainerHeight;
+}
+
+%_rowHelperContainerPosition {
+  top: -31px;
+  left: -11px;
+  padding-top: $helperContainerHeight;
+  margin-bottom: -27px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+/* #endregion */
+
+%clear-after {
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+%transparent-text-input {
+  border: none;
+  border-bottom: 1px solid $secondary_gray;
+  outline: none;
+  background-color: transparent;
+  padding-left: 0!important;
+  padding-right: 0!important;
+  &:focus {
+    outline: none;
+    color: $secondary_gray_contrast;
+    border-bottom: 1px solid $primary_gray_contrast;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.2;}
+}

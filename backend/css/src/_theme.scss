@@ -1,0 +1,110 @@
+$themes: (
+  'DAIG': (
+    'primary': $_color_nhs_blue,
+    // 'primary-hover': color($_color_nhs_blue shade(20%)),
+    'primary-hover': shade($_color_nhs_blue, 20%),
+    'primary-contrast': #fff,
+    // 'primary-bg': color($_color_nhs_blue tint(80%)), /* for highlighting especially */
+    'primary-bg': tint($_color_nhs_blue, 80%), /* for highlighting especially */
+    'secondary': rgb(240, 161, 51),
+    'secondary-contrast': rgb(240, 161, 51),
+  ),
+  'SurreyHeartLand': (
+    'primary': $_color_blue,
+    // 'primary-hover': color($_color_blue shade(20%)),
+    'primary-hover': shade($_color_blue, 20%),
+    'primary-contrast': #fff,
+    'primary-bg': tint($_color_blue, 80%),
+    'secondary': rgb(240, 161, 51),
+    'secondary-contrast': rgb(240, 161, 51)
+  ),
+  'HOME': (
+    'primary': rgb(34, 111, 181),
+    'primary-hover': shade(rgb(34, 111, 181), 20%),
+    'primary-contrast': #fff,
+    'primary-bg': tint(rgb(34, 111, 181), 80%),
+    'secondary': rgb(240, 161, 51),
+    'secondary-hover': shade(rgb(240, 161, 51), 20%),
+    'secondary-contrast': #fff
+  ),
+  'templateuse': (
+    'primary': #111111,
+    'primary-contrast': #111112,
+    'primary-hover': #111113,
+    'primary-bg': #111114,
+    'secondary': #222221,
+    'secondary-contrast': #222222,
+    'secondary-hover': #222223,
+    'secondary-bg': #222224,
+    'tertiary': #333331,
+    'tertiary-contrast': #333332,
+    'tertiary-hover': #333333,
+    'tertiary-bg': #333334,
+    'h1-font-size': '#h1_font_size',
+    'h1-color': '#h1_color',
+    'h2-font-size': '#h2_font_size',
+    'h2-color': '#h2_color',
+    'h3-font-size': '#h3_font_size',
+    'h3-color': '#h3_color',
+    'p-font-size': '#p_font_size',
+    'p-color': '#p_color',
+    'light-gray': '#light_gray_color',
+    'mid-gray': '#medium_gray_color',
+    'dark-gray': '#dark_gray_color',
+    'light-gray-hover': '#light_gray_color_hover',
+    'mid-gray-hover': '#medium_gray_color_hover',
+    'dark-gray-hover': '#dark_gray_color_hover',
+    'dark-blue': '#dark_blue_color',
+    'mid-blue': '#medium_blue_color',
+    'light-blue': '#light_blue_color',
+    'dark-blue-hover': '#dark_blue_color_hover',
+    'mid-blue-hover': '#medium_blue_color_hover',
+    'light-blue-hover': '#light_blue_color_hover',
+  )
+) !default;
+
+@mixin themify($property, $key, $themes: $themes) {
+  // Iterate over the themes
+  @each $theme, $colors in $themes {
+    // Create a selector (e.g. `.media.theme-unicorn, .theme-unicorn .media`)
+    // &.theme-#{$theme},
+    .theme--#{$theme} & {
+      // Output the declaration
+      #{$property}: map-get($colors, $key);
+    }
+  }
+}
+
+/// Shorthand to themify color through `themify` mixin
+/// @access public
+/// @see {mixin} themify
+@mixin color--by-theme($arguments...) {
+  @include themify('color', $arguments...);
+}
+
+/// Shorthand to themify border-color through `themify` mixin
+/// @access public
+/// @see {mixin} themify
+@mixin border-color--by-theme($arguments...) {
+  @include themify('border-color', $arguments...);
+}
+
+/// Shorthand to themify background-color through `themify` mixin
+/// @access public
+/// @see {mixin} themify
+@mixin background-color--by-theme($arguments...) {
+  @include themify('background-color', $arguments...);
+}
+/// Shorthand to themify font-size through `themify` mixin
+/// @access public
+/// @see {mixin} themify
+@mixin font-size--by-theme($arguments...) {
+  @include themify('font-size', $arguments...);
+}
+
+/// Shorthand to themify line-height through `themify` mixin
+/// @access public
+/// @see {mixin} themify
+@mixin line-height--by-theme($arguments...) {
+  @include themify('line-height', $arguments...);
+}

@@ -1,0 +1,157 @@
+<!-- https://masonry.desandro.com/layout.html -->
+<!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+<script>
+  (function($) {
+    setTimeout(function() {
+      $(function() {
+        $('.kd_glossary').each(function() {
+          var $this = $(this);
+          if($this.hasClass('kd_glossary-processed')) {
+            return ;
+          }
+          $this.addClass('kd_glossary-processed');
+          var data = JSON.parse($this.find('.kd_glossary_data').text()); // [{title: '', url: ''}]
+          $this.find('.kd_glossary_data').remove();
+
+          var alphabetics = {};
+          for (var i in data) {
+            var initial = data[i].title[0].toUpperCase();
+            if(initial.match(/\d/)) {
+              initial = '0-9';
+            }
+            if(typeof alphabetics[initial] === 'undefined') {
+              alphabetics[initial] = [];
+            }
+            alphabetics[initial].push({
+              title: data[i].title,
+              url: data[i].url
+            });
+          }
+
+          if(alphabetics.length < 1) {
+            return ;
+          }
+
+          var $kd_glossary_navEl = $this.find('.kd_glossary_nav');
+          var $kd_glossary_bodyEl = $this.find('.kd_glossary_body');
+
+          var navTpl = $kd_glossary_navEl.find('> li').clone();
+          var bodyTpl = $kd_glossary_bodyEl.find('> li').clone();
+          $kd_glossary_bodyEl.find('> li').remove();
+          for (var initial in alphabetics) {
+            var wordsInitialsNavEl = navTpl.clone();
+            var wordsGroupEl = bodyTpl.clone();
+
+            wordsInitialsNavEl.find('> a').attr('rel', 'is-' + initial).text(initial);
+            wordsInitialsNavEl.appendTo($kd_glossary_navEl);
+
+            wordsGroupEl.find('> span').text(initial);
+            wordsGroupEl.attr('rel', 'is-' + initial);
+            var bodyUl = wordsGroupEl.find('> ul');
+            bodyUl.html('');
+            for (var k in alphabetics[initial]) {
+              if(alphabetics[initial][k].url) {
+                bodyUl.append($('<li><a href="' + alphabetics[initial][k].url + '">' + alphabetics[initial][k].title + '</a></li>'));
+              }
+              else {
+                bodyUl.append($('<li>' + alphabetics[initial][k].title + '</li>'));
+              }
+            }
+            wordsGroupEl.append(bodyUl);
+            wordsGroupEl.appendTo($kd_glossary_bodyEl);
+          }
+          // Nav Events
+          $kd_glossary_navEl.find('> li a').click(function() {
+            // reset filters.
+            $this.find('.kd_glossary_filter input').val('');
+            $this.find('.kd_glossary_body > li > ul > li').removeClass('highlighted');
+
+            if($(this).attr('rel') === 'is-all') {
+              $kd_glossary_navEl.find('> li a').addClass('active');
+              $kd_glossary_bodyEl.find('> li').addClass('active');
+              return ;
+            }
+            $targetEl = $kd_glossary_bodyEl.find('> li[rel="' + $(this).attr('rel') + '"]');
+            $kd_glossary_navEl.find('> li a').not($(this)).removeClass('active');
+            $kd_glossary_bodyEl.find('> li').not($targetEl).removeClass('active');
+            $(this).addClass('active');
+            $targetEl.addClass('active');
+          });
+
+          // masonry
+          resizeAllGridItems();
+
+          // text filter
+          $this.find('.kd_glossary_filter input').keyup(function () {
+            var thisvalue = $(this).val().toLowerCase();
+            if (thisvalue.length === 0) {
+              $kd_glossary_navEl.find('> li a[rel="is-all"]').trigger('click');
+              $this.find('.kd_glossary_body > li > ul > li').removeClass('highlighted');
+            }
+            else {
+              var thisvalueInitial = thisvalue[0].toUpperCase();
+              var glossaryLi = $this.find('.kd_glossary_body > li');
+              glossaryLi.find('li.kd_glossary_grid').removeClass('active');
+              glossaryLi.find('> ul > li').each(function () {
+                var _text = $(this).text().toLowerCase();
+                var match = _text.match(thisvalue);
+                if (match !== null && match.length > 0) {
+                  $(this).parents('li.kd_glossary_grid').addClass('active');
+                  $(this).addClass('highlighted');
+                }
+                else {
+                  $(this).removeClass('highlighted');
+                  var siblingsMatched = false;
+                  if($(this).siblings().hasClass('highlighted')) {
+                    siblingsMatched = true;
+                  }
+                  // $(this).siblings().each(() => {
+                  // });
+                  if(!siblingsMatched) {
+                    $(this).parents('li.kd_glossary_grid').removeClass('active');
+                  }
+                }
+              });
+            }
+          });
+        });
+      });
+    }, 400);
+  })(jQuery);
+
+  function resizeGridItem(item, rowHeight, rowGap){
+    rowSpan = Math.ceil((item.querySelector('ul').getBoundingClientRect().height + rowGap + 30) / (rowHeight + rowGap));
+    item.style.gridRowEnd = "span "+rowSpan;
+  }
+
+  function resizeAllGridItems(){
+    grid = document.getElementsByClassName("kd_glossary_body")[0];
+    rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+    rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+    allItems = document.getElementsByClassName("kd_glossary_grid");
+    for(x=0;x<allItems.length;x++){
+        resizeGridItem(allItems[x], rowHeight, rowGap);
+    }
+  }
+</script>
+
+<div class="kd_glossary">
+  <span class="kd_glossary_data">%data%</span>
+  <div class="kd_glossary_filter">
+    <div>
+      <label>Filter: </label>
+      <input type="text" value="" />
+    </div>
+  </div>
+  <ul class="kd_glossary_nav">
+    <li><a rel="is-all">All</a></li>
+  </ul>
+  <ul class="kd_glossary_body">
+    <li class="kd_glossary_grid active" rel="is-%alphabetical%">
+      <span>%alphabetical%</span>
+      <ul>
+        <li>%title%</li>
+      </ul>
+    </li>
+  </ul>
+</div>

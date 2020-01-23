@@ -1,0 +1,175 @@
+$icon-font-family: icon;
+$icon-account: "\EA01";
+$icon-address: "\EA02";
+$icon-arrow-down: "\EA03";
+$icon-arrow-left: "\EA04";
+$icon-arrow-right: "\EA05";
+$icon-arrow-top: "\EA06";
+$icon-arrow-up: "\EA07";
+$icon-book: "\EA08";
+$icon-book_bg: "\EA09";
+$icon-call: "\EA0A";
+$icon-chat: "\EA0B";
+$icon-check: "\EA0C";
+$icon-close: "\EA0D";
+$icon-cog: "\EA0E";
+$icon-cog_bg: "\EA0F";
+$icon-collaborate: "\EA10";
+$icon-delta-right: "\EA11";
+$icon-document-edit: "\EA12";
+$icon-document-edit_bg: "\EA13";
+$icon-dots: "\EA14";
+$icon-email: "\EA15";
+$icon-envelop: "\EA16";
+$icon-experience: "\EA17";
+$icon-facebook: "\EA18";
+$icon-flag: "\EA19";
+$icon-globe-pin: "\EA1A";
+$icon-globe-pin_bg: "\EA1B";
+$icon-grid: "\EA1C";
+$icon-guide: "\EA1D";
+$icon-home: "\EA1E";
+$icon-learning: "\EA1F";
+$icon-linkedin: "\EA20";
+$icon-list: "\EA21";
+$icon-lock: "\EA22";
+$icon-megafon: "\EA23";
+$icon-megafon_bg: "\EA24";
+$icon-network: "\EA25";
+$icon-pin: "\EA26";
+$icon-play: "\EA27";
+$icon-profile: "\EA28";
+$icon-project: "\EA29";
+$icon-remove: "\EA2A";
+$icon-reset: "\EA2B";
+$icon-search: "\EA2C";
+$icon-settings: "\EA2D";
+$icon-settings_bg: "\EA2E";
+$icon-star: "\EA2F";
+$icon-tree: "\EA30";
+$icon-tree_bg: "\EA31";
+$icon-twitter: "\EA32";
+$icon-wiki: "\EA33";
+$icon-zoom-in: "\EA34";
+$icon-zoom-out: "\EA35";
+@font-face {
+   font-family: icon;
+   src: url('../fonts/icon.eot');
+   src: url('../fonts/icon.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/icon.woff2') format('woff2'),
+         url('../fonts/icon.woff') format('woff'),
+         url('../fonts/icon.ttf') format('truetype'),
+         url('../fonts/icon.svg') format('svg');}
+._icon-account:before,
+._icon-address:before,
+._icon-arrow-down:before,
+._icon-arrow-left:before,
+._icon-arrow-right:before,
+._icon-arrow-top:before,
+._icon-arrow-up:before,
+._icon-book:before,
+._icon-book_bg:before,
+._icon-call:before,
+._icon-chat:before,
+._icon-check:before,
+._icon-close:before,
+._icon-cog:before,
+._icon-cog_bg:before,
+._icon-collaborate:before,
+._icon-delta-right:before,
+._icon-document-edit:before,
+._icon-document-edit_bg:before,
+._icon-dots:before,
+._icon-email:before,
+._icon-envelop:before,
+._icon-experience:before,
+._icon-facebook:before,
+._icon-flag:before,
+._icon-globe-pin:before,
+._icon-globe-pin_bg:before,
+._icon-grid:before,
+._icon-guide:before,
+._icon-home:before,
+._icon-learning:before,
+._icon-linkedin:before,
+._icon-list:before,
+._icon-lock:before,
+._icon-megafon:before,
+._icon-megafon_bg:before,
+._icon-network:before,
+._icon-pin:before,
+._icon-play:before,
+._icon-profile:before,
+._icon-project:before,
+._icon-remove:before,
+._icon-reset:before,
+._icon-search:before,
+._icon-settings:before,
+._icon-settings_bg:before,
+._icon-star:before,
+._icon-tree:before,
+._icon-tree_bg:before,
+._icon-twitter:before,
+._icon-wiki:before,
+._icon-zoom-in:before,
+._icon-zoom-out:before {
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-family: "icon"
+}
+._icon-account:before { content: "\EA01" }
+._icon-address:before { content: "\EA02" }
+._icon-arrow-down:before { content: "\EA03" }
+._icon-arrow-left:before { content: "\EA04" }
+._icon-arrow-right:before { content: "\EA05" }
+._icon-arrow-top:before { content: "\EA06" }
+._icon-arrow-up:before { content: "\EA07" }
+._icon-book:before { content: "\EA08" }
+._icon-book_bg:before { content: "\EA09" }
+._icon-call:before { content: "\EA0A" }
+._icon-chat:before { content: "\EA0B" }
+._icon-check:before { content: "\EA0C" }
+._icon-close:before { content: "\EA0D" }
+._icon-cog:before { content: "\EA0E" }
+._icon-cog_bg:before { content: "\EA0F" }
+._icon-collaborate:before { content: "\EA10" }
+._icon-delta-right:before { content: "\EA11" }
+._icon-document-edit:before { content: "\EA12" }
+._icon-document-edit_bg:before { content: "\EA13" }
+._icon-dots:before { content: "\EA14" }
+._icon-email:before { content: "\EA15" }
+._icon-envelop:before { content: "\EA16" }
+._icon-experience:before { content: "\EA17" }
+._icon-facebook:before { content: "\EA18" }
+._icon-flag:before { content: "\EA19" }
+._icon-globe-pin:before { content: "\EA1A" }
+._icon-globe-pin_bg:before { content: "\EA1B" }
+._icon-grid:before { content: "\EA1C" }
+._icon-guide:before { content: "\EA1D" }
+._icon-home:before { content: "\EA1E" }
+._icon-learning:before { content: "\EA1F" }
+._icon-linkedin:before { content: "\EA20" }
+._icon-list:before { content: "\EA21" }
+._icon-lock:before { content: "\EA22" }
+._icon-megafon:before { content: "\EA23" }
+._icon-megafon_bg:before { content: "\EA24" }
+._icon-network:before { content: "\EA25" }
+._icon-pin:before { content: "\EA26" }
+._icon-play:before { content: "\EA27" }
+._icon-profile:before { content: "\EA28" }
+._icon-project:before { content: "\EA29" }
+._icon-remove:before { content: "\EA2A" }
+._icon-reset:before { content: "\EA2B" }
+._icon-search:before { content: "\EA2C" }
+._icon-settings:before { content: "\EA2D" }
+._icon-settings_bg:before { content: "\EA2E" }
+._icon-star:before { content: "\EA2F" }
+._icon-tree:before { content: "\EA30" }
+._icon-tree_bg:before { content: "\EA31" }
+._icon-twitter:before { content: "\EA32" }
+._icon-wiki:before { content: "\EA33" }
+._icon-zoom-in:before { content: "\EA34" }
+._icon-zoom-out:before { content: "\EA35" }

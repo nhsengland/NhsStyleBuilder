@@ -1,0 +1,29 @@
+@import '../../_vars';
+@import '../../../../backend/css/custom/css.videos_slider.css';
+iframe{
+  background-color: $primary_gray;
+}
+.videos-show-1{
+  & > div{
+    width: 100%;
+    padding: 0;
+  }
+}
+.videos-show-2{
+  & > div{
+    width: calc(100% / 2);
+    padding-right: 11px;
+    &:nth-child(2n) {
+      padding-right: 0;
+    }
+  }
+}
+.videos-show-3{
+  & > div{
+    width: calc(100% / 3);
+    padding-right: 11px;
+    &:nth-child(3n) {
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "nhskahootz_layoutblock_demo",
+  "version": "1.0.0",
+  "description": "Demo purpos. Design and slice layout block in modular way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">= 8.8.1"
+  },
+  "keywords": [],
+  "author": "Richard W",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "cors": "^2.8.5",
+    "css-loader": "^0.28.9",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "icon.font": "^1.1.0",
+    "lost": "^8.2.0",
+    "postcss-color-function": "^4.0.1",
+    "postcss-loader": "^2.1.0",
+    "postcss-node-sass": "^2.1.4",
+    "postcss-sass-extend": "0.0.1",
+    "precss": "^3.1.0",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.11.0",
+    "body-parser": "^1.19.0"
+  },
+  "dependencies": {
+    "nhsuk-frontend": "^3.0.2"
+  }
+}

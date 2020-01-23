@@ -1,0 +1,31 @@
+{
+  "projectInfo": {
+    "title": "New project",
+    "projectLogoUrl": "https://future.nhs.uk/inovem/sites/site4065/custom/futurenhs_logo.gif",
+    "projectVisibility": "Only visible to members. Membership must be approved",
+    "projectMemberCount": 18,
+    "projectHomeUrl": "https://future.nhs.uk",
+    "projectContactEmail": "example@example.devel"
+  },
+  "projectOptions": {
+    "primary_color": "#005eb8",
+    "secondary_color": "#ffffff",
+    "tertiary_color": "#050505",
+    "light_gray_color": "#E8EDEE",
+    "medium_gray_color": "#768692",
+    "dark_gray_color": "#425563",
+    "dark_blue_color": "#005eb8",
+    "light_blue_color": "#4ca6b9",
+    "medium_blue_color": "#1a7b91",
+    "h1_color": "#212b32",
+    "h1_font_size": "48px",
+    "h2_color": "#212b32",
+    "h2_font_size": "32px",
+    "h3_color": "#212b32",
+    "h3_font_size": "24px",
+    "p_color": "#212b32",
+    "p_font_size": "19px"
+  },
+  "children": [],
+  "environment": "local"
+}
