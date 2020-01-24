@@ -3,7 +3,14 @@
     <div class="preview">
       <div class="selection-overlay"></div>
       <a :class="optionClasses" @click="toggleOptionsPanel">
-        <img :src="Obj.contents.ImageSrc" :title="Obj.contents.ImageTitle" :alt="Obj.contents.ImageAlt" />
+        <figure class="nhsuk-image" v-if="!Obj.contents.ImageFull">
+          <img :src="Obj.contents.ImageSrc" :title="Obj.contents.ImageTitle" :alt="Obj.contents.ImageAlt" />
+          <figcaption class="nhsuk-image__caption" v-if="Obj.contents.ImageCaption">
+            {{ Obj.contents.ImageCaption }}
+          </figcaption>
+        </figure>
+        <img v-if="Obj.contents.ImageFull" :src="Obj.contents.ImageSrc" :title="Obj.contents.ImageTitle" :alt="Obj.contents.ImageAlt" />
+        <p v-if="Obj.contents.ImageFull && Obj.contents.ImageCaption">{{ Obj.contents.ImageCaption }}</p>
       </a>
     </div>
     <div class="inline-element-control">
@@ -43,6 +50,13 @@
       </div>
       <transition name="slide-fade">
         <div class="console-configbody" v-if="showConfigBody">
+          <label>Image width</label>
+          <select :value="Obj.contents.ImageFull" @blur="updateObj('ImageFull', 'contents', parseInt($event.target.value))">
+            <option value="0">Auto width</option>
+            <option value="1">Full width</option>
+          </select>
+          <br />
+          <br />
           <input
             placeholder="Type the link if any"
             @blur="updateObj('ImageUrl', 'contents', $event.target.value)"
@@ -64,6 +78,14 @@
             @blur="updateObj('ImageAlt', 'contents', $event.target.value)"
             @keyup.enter="updateObj('ImageAlt', 'contents', $event.target.value)"
             :value="Obj.contents.ImageAlt"
+            class="inline-input" />
+          <br />
+          <br />
+          <input
+            placeholder="Caption"
+            @blur="updateObj('ImageCaption', 'contents', $event.target.value)"
+            @keyup.enter="updateObj('ImageCaption', 'contents', $event.target.value)"
+            :value="Obj.contents.ImageCaption"
             class="inline-input" />
         </div>
       </transition>
@@ -96,6 +118,8 @@ export default {
       this.Obj.contents.ImageUrl = null;
       this.Obj.contents.ImageTitle = null;
       this.Obj.contents.ImageAlt = null;
+      this.Obj.contents.ImageCaption = null;
+      this.Obj.contents.ImageFull = 0;
     }
   }
 }
