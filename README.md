@@ -20,10 +20,10 @@ chmod +x ./install.sh
 ./install.sh
 ```
 
-Install manually:
+On Windows, you can install manually in command prompt:
 
 Clone the repository, and run `npm install` in both backend and frontend folder.
-```bash
+```dos
 cd backend/
 npm install
 cd ../frontend/
@@ -37,7 +37,23 @@ chmod +x ./start.sh
 ./start.sh
 ```
 
-Close the terminal can stop serving and release
+On Windows, you can start manually in command prompt
+
+```dos
+cd ./backend
+md ..\tmp
+START /B node ./node_modules/webpack/bin/webpack.js -w > ../tmp/tmp.txt
+START /B node server.js > ../tmp/tmp2.txt
+cd ../frontend
+START /B node build/dev-server.js > ../tmp/tmp3.txt
+
+```
+
+Close the terminal/command prompt can stop serving and release ports. Or, run
+
+```bash
+./stop.sh
+```
 
 <h2 align="center">Concepts</h2>
 

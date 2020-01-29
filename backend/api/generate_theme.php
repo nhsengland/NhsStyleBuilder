@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-require_once '../lib/generator.class.php';
+require_once __DIR__ . '/../lib/generator.class.php';
 $htmlGenerator = new htmlGenerator();
 
 $dataJson = file_get_contents('php://input');

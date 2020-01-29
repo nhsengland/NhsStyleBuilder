@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-require_once '../lib/import.class.php';
+require_once __DIR__ . '/../lib/import.class.php';
 
 $importHandler = new importHandler();
 

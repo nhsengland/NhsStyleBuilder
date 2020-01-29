@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-require_once '../lib/generator.class.php';
+require_once __DIR__ . '/../lib/generator.class.php';
 $htmlGenerator = new htmlGenerator();
 $htmlGenerator->addCss('dist/style.css');
 $htmlGenerator->addJs('jquery-1.12.4.min.js'); // ensure appear as 1st script
