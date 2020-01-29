@@ -16,6 +16,7 @@ Install with shell script:
 
 Clone the repository, and run
 ```bash
+chmod +x ./install.sh
 ./install.sh
 ```
 
@@ -32,6 +33,7 @@ npm install
 <h2 align="center">Get Started</h2>
 
 ```bash
+chmod +x ./start.sh
 ./start.sh
 ```
 
