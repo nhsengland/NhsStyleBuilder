@@ -74,6 +74,14 @@ Make sure the external linked static assets are available on the target server. 
 
 Then, restart the project and import/export again.
 
+<h2 align="center">Import</h2>
+
+The exported html contains importable scripts.
+
+To import,
+1. click on import button
+2. copy and paste previously exported html
+
 <h2 align="center">Contributors</h2>
 
 KD Web is a full service web design agency based in London. We craft beautiful, engaging websites and deliver successful SEO campaigns.
