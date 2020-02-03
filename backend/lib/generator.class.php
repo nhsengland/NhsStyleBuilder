@@ -712,7 +712,13 @@ Copy the code and paste into Kahootz's Applet.%br%
 
   public function renderImageElement($contents = NULL, $options = NULL) {
     $path = '../layout_blocks/image.element.html';
-    list('ImageSrc' => $src, 'ImageUrl' => $url, 'ImageTitle' => $title, 'ImageAlt' => $alt) = $contents;
+    list('ImageSrc' => $src, 'ImageUrl' => $url, 'ImageTitle' => $title, 'ImageAlt' => $alt, 'ImageFull' => $full_mode, 'ImageCaption' => $image_caption) = $contents;
+    if(!$full_mode) {
+      $path = '../layout_blocks/figure.element.html';
+    }
+    else {
+      $image_caption = '<p>' . $image_caption . '</p>';
+    }
     $target = '_self';
     if($url !== null) {
       if(preg_match('/localhost/i', $url)) {
@@ -728,6 +734,7 @@ Copy the code and paste into Kahootz's Applet.%br%
       '/%title%/i', // $title
       '/%href%/i', // $url
       '/%target%/i', // $target
+      '/%image_caption%/i', // $target
     );
     $replacements = array(
       "$1$src$3",
@@ -735,6 +742,7 @@ Copy the code and paste into Kahootz's Applet.%br%
       "$1$title$3",
       "$1$url$3",
       "$1$target$3",
+      "$1$image_caption$3",
     );
     if($url === null) {
       // If no url provided, convert <a> to <div>
@@ -817,6 +825,7 @@ Copy the code and paste into Kahootz's Applet.%br%
       $return['ImageUrl'] = $contents->ImageUrl;
       $return['ImageTitle'] = $contents->ImageTitle;
       $return['ImageAlt'] = $contents->ImageAlt;
+      $return['ImageCaption'] = $contents->ImageCaption;
     }
     if(!empty($contents->videos)) {
       $return['videos'] = [];
