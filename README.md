@@ -52,6 +52,7 @@ START /B node build/dev-server.js > ../tmp/tmp3.txt
 Close the terminal/command prompt can stop serving and release ports. Or, run
 
 ```bash
+chmod +x ./stop.sh
 ./stop.sh
 ```
 
