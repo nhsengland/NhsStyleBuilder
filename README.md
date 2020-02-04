@@ -85,8 +85,7 @@ To import:
 
 <h2 align="center">Contributors</h2>
 
-KD Web is a full service web design agency based in London. We craft beautiful, engaging websites and deliver successful SEO campaigns.
+KD Web is a full service web design agency based in London. We craft beautiful and engaging websites, develop custom code and deliver successful SEO campaigns.
 
 Developer: Ruichao Wang
-
 Designer: Simeon Artamonov
