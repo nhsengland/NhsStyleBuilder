@@ -65,7 +65,7 @@ The builder allows 3 types of elements to be created: Row, Column and Block. The
 
 <h2 align="center">Export the page and deploy</h2>
 
-Once a page is built, one can use the 'Export' button to get the full HTML code for the page.
+Once a page is built, one can use the 'Export' button to obtain the full HTML code of that page.
 
 When deploying the exported page to a server, the external static assets must be hosted on the server.
 
