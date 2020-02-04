@@ -81,7 +81,7 @@ The exported html contains importable scripts.
 
 To import:
 1. Click on import button
-2. Copy and paste the previously exported html "FOR RICHARD: paste where?"
+2. Copy and paste the previously exported html.
 
 <h2 align="center">Contributors</h2>
 
