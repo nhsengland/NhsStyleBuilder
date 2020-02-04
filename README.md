@@ -90,3 +90,5 @@ KD Web is a full service web design agency based in London. We craft beautiful a
 Developer: Ruichao Wang
 
 Designer: Simeon Artamonov
+
+Project Manager: Enrico Walser
