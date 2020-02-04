@@ -69,7 +69,7 @@ Once a page is built, one can use the 'Export' button to obtain the full HTML co
 
 When deploying the exported page to a server, the external static assets must be hosted on the server.
 
-To achieve this replace the `http://localhost:3000/` with `backend/lib/generator.class.php`, with the target server address, for example, `http://example.com`.
+To achieve this, replace the `http://localhost:3000/` with `backend/lib/generator.class.php`, with the target server address, for example, `http://example.com`.
 
 Make sure the external linked static assets are available on the target server. For example, the folder available at `http://localhost:3000/css/fonts` must be uploaded to `http://example.com/css/fonts`.
 
